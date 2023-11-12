@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "92a7ecf8-dd08-47e1-ba30-f228478fe766",
+		"name": "TeamManage_Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3237665"
+	},
+	"item": [
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Team_Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\":\"Little Pro (Fontend)\",\r\n    \"desc\":\"React Js\",\r\n    \"banner\":\"http://codergogoi.com/youtube/images/alphonso.jpeg\",\r\n    \"category\":\"Fontend\",\r\n    \"available\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TEAM_BASE}}/team/create",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team_view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TEAM_BASE}}/team",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test_web_hook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":{\r\n        \"event\":\"TEST\",\r\n        \"data\":{}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TEAM_BASE}}/team/app-events",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team",
+								"app-events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team_Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TEAM_BASE}}/team/Category/Fontend",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team",
+								"Category",
+								"Fontend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team_Selected",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"ids\":[\r\n        \"655066f8c842de60d805537c\",\r\n        \"655068b61805af62d7cb2ebf\"\r\n    ]    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TEAM_BASE}}/team/ids",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team",
+								"ids"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team_Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{TEAM_BASE}}/team/655066f8c842de60d805537c",
+							"host": [
+								"{{TEAM_BASE}}"
+							],
+							"path": [
+								"team",
+								"655066f8c842de60d805537c"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzNUB0ZXN0LmNvbSIsIl9pZCI6IjY1NTA1ZTI2MjM0ZWFjZDk0YjYyYWQ3MSIsImlhdCI6MTY5OTc2NzM5MCwiZXhwIjoxNzAyMzU5MzkwfQ.spmVDAPAEHpr6BZ7f5YkRXK7ndZIwPyHA4pewfo-4B8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User_SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test35@test.com\",\r\n    \"password\":\"12345\",\r\n    \"phone\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_BASE}}/signup",
+							"host": [
+								"{{USER_BASE}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test35@test.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_BASE}}/login",
+							"host": [
+								"{{USER_BASE}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
